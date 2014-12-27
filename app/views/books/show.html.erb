@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="center">Details about <%= @book.title %> </h1>
+<br>
+  <p id="notice"><%= notice %></p>
+
+  <div class="right" style="width:750px">
+    <p>
+      <strong>Title:</strong>
+      <%= @book.title %>
+    </p>
+
+    <p>
+      <strong>Author:</strong>
+      <%= @book.author %>
+    </p>
+
+    <p>
+      <strong>Year:</strong>
+      <%= @book.year %>
+    </p>
+
+    <p>
+      <strong>Loan number:</strong>
+      <%= @book.loan_id %>
+    </p>
+
+    <%= link_to 'Edit', edit_book_path(@book) %> |
+  <%= link_to 'Back', books_path %>
+
+  </div>
+
+  <div class="left" style="width:200px">
+    <%= image_tag @book.image %>
+  </div>
+
+  <br style="clear:both"> 
+
+  
+</div>

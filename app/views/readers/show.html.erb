@@ -1,0 +1,27 @@
+<div class="container">
+<h1 class="center">Showing details about <%= @reader.name %></h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reader.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @reader.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @reader.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @reader.email %>
+</p>
+
+<%= link_to 'Edit', edit_reader_path(@reader) %> |
+<%= link_to 'Back', readers_path %>
+</div>

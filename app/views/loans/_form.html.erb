@@ -1,0 +1,45 @@
+<%= form_for(@loan) do |f| %>
+  <% if @loan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+
+      <ul>
+      <% @loan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    Reader<br>
+
+    <% options = Reader.all.collect do |r| %>
+      <% [r.name, r.id] %>
+    <% end %>
+    <%= f.select :reader_id, options %>  
+
+  </div>
+  <div class="field">
+    Book title<br>
+
+    <% opt = Book.all.collect do |b| %>
+      <% [b.title, b.id] %>
+    <% end %>
+
+    <%= f.select :book_id, opt %>
+  </div>
+
+  <div class="field">
+    Date of loan<br>
+    <%= f.date_select :date_loan %>
+  </div>
+  <div class="field">
+    Date of return<br>
+    <%= f.date_select :date_return %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

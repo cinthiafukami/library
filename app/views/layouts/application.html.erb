@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Public Library Website</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>  
+</head>
+<body>
+
+<div class="center"><a href="http://localhost:3000/welcome/home"><%= image_tag "logo.jpg", width: "300px" %></a></div><br>
+
+<div class="nav">
+	<ul>
+		<li><%= link_to "Home", welcome_home_path %></li>
+		<li><%= link_to "All books", books_path %></li>
+		<li><%= link_to "Register", readers_path %></li>
+		<li><%= link_to "Loans", loans_path %></li>
+	</ul>
+</div>
+
+
+<%= yield %>
+
+
+<div class="footer">
+	<div class="container">
+		<ul>
+			<li><%= link_to "Home", welcome_home_path %> | </li>
+			<li><%= link_to "All books", books_path %> |</li>
+			<li><%= link_to "Register", readers_path %> |</li>
+			<li><%= link_to "Loans", loans_path %></li>
+		</ul>
+
+		<br style="clear:both">
+
+		<p style="padding-left:40px">IT231 - Fall 2014 - Final Project<br>
+			Developed by: Cinthia Fukami</p>
+	</div>
+</div>
+
+</body>
+</html>
